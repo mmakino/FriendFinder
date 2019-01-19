@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+<!-- 
+  This HTML file has been started off from the sample html file 
+  of the instrution and modified the dropdown menu as radio buttons, 
+  updated the validation, and so on.
+-->
+  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -193,7 +199,7 @@
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="" alt="">
+          <img id="match-img" src="" alt="No image available" class="img-fluid rounded mx-auto">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -224,7 +230,11 @@
         });
         console.log(questions);
         
-        return Object.values(questions).every(v => v !== false);
+        let isValid = Object.values(questions).every(v => v !== false);
+        isValid = $('#name').val() !== "";
+        isValid = $('#photo').val() !== "";
+        
+        return isValid;
       }
 
       // If all required fields are filled
@@ -248,6 +258,7 @@
 
         });
       } else {
+        let missing = Object.entries(questions).filter(v => v === false);
         alert("Please fill out all fields before submitting!");
       }
     });

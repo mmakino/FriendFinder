@@ -51,3 +51,9 @@ label
      color: #666;
      cursor: pointer;
 } 
+
+ /* for modal */
+#match-img {
+     width: 80%;
+     height: auto;
+}

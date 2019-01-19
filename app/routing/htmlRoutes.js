@@ -20,7 +20,6 @@ class HTMLRoutes {
   // * htmlFile = path to an html file to display
   //
   home(htmlFile) {
-    // this.app.all(/\/.*/, (req, res) => {
     this.app.all('/', (req, res) => {
       res.sendFile(htmlFile);
     });

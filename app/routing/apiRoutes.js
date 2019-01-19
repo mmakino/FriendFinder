@@ -1,8 +1,12 @@
 
 'use strict';
 
+const fs = require('fs');
 let friends = require('../data/friends');
 
+const APIROutes = function() {
+
+}
 //
 // Routes to API endpoints
 //
@@ -33,7 +37,6 @@ class APIRoutes {
       // { name: '',
       // photo: '',
       // scores: [ '3', '3', '2', '2', '2', '2', '2', '5', '5', '2' ] } 
-      // TO-DO: store this new person's data into data/friends.js
       let scores = req.body.scores.map(n => parseInt(n));
       let matchIndex = this.findMatch(scores);
       let bestMatch = {
@@ -41,6 +44,24 @@ class APIRoutes {
         photo: friends[matchIndex].photo
       }
       res.send(bestMatch);
+      
+      // Store this new person's data into data/friends.js 
+      this.addPerson(req.body);
+    });
+  }
+  
+  //
+  // Add a new person into the friends data
+  //
+  addPerson(personInfo) {
+    friends.push(personInfo);
+    let data = 'let friends = ' + JSON.stringify(friends) + "\n"
+                + 'module.exports = friends;';
+    console.log(data);
+    
+    fs.writeFile(__dirname + '/../data/friends.js', data, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
     });
   }
   
