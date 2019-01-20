@@ -65,23 +65,29 @@ FriendFinder
 ├── app
 │   ├── data
 │   │   ├── friends-init.js                -- initial mock survey data
-│   │   └── friends.js                     -- active survey data
+│   │   └── friends.js                     -- active survey data in use
 │   ├── public
 │   │   ├── css
-│   │   │   ├── style.css                  -- CSS for home.html
-│   │   │   └── style_survey.css           -- CSS for survey.html
+│   │   │   ├── style.css                  -- css for home.html
+│   │   │   └── style_survey.css           -- css for survey.html
 │   │   ├── home.html                      -- The main web page
 │   │   ├── images
-│   │   │   └── friends-vector-icon-10.jpg -- background used in the main web page
-│   │   └── survey.html                    -- The survery web page
+│   │   │   ├── demo-home.png              -- snapshot for this README
+│   │   │   ├── demo-result.png            -- snapshot for this README
+│   │   │   ├── demo-survey-bottom.png     -- snapshot for this README
+│   │   │   ├── demo-survey-top.png        -- snapshot for this README
+│   │   │   └── friends-vector-icon-10.jpg -- background image for home.html
+│   │   ├── javascript
+│   │   │   └── survey.js                  -- for survey form data process
+│   │   └── survey.html                    -- The survey web page
 │   └── routing
 │       ├── apiRoutes.js                   -- Javascript codes for API routes
 │       └── htmlRoutes.js                  -- Javascript for routing HTML pages
-├── homework_instructions.md               -- source instructions/requirements
+├── homework_instructions.md               -- original instruction/requirements
 ├── package.json                           -- NPM JSON package file
-└── server.js                              -- The back-end server Javascript codes
+└── server.js                              -- The main backend server Javascript
 
-6 directories, 13 files
+7 directories, 18 files
 ```
 
 #### Written by [Motohiko Makino](https://mmakino.github.io/)
