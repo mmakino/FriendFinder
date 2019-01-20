@@ -9,10 +9,35 @@ This full stack web site uses Express(Node.js) to handle routing to serve variou
 ### Deployment and Availability
 
 * Heroku
-  * https://
+  * Live app - https://intense-falls-18158.herokuapp.com
 * GitHub
-  * https://mmakino.github.io/FriendFinder
-  
+  * Repository - https://mmakino.github.io/FriendFinder
+
+### Intallation
+
+* This full stack app can be installed __locally__ through the following steps 
+
+1. Copy / Clone the git repository
+    ```
+    git clone https://github.com/mmakino/FriendFinder.git
+    ```
+1. Install necessary packages
+    ```
+    npm install
+    ```
+1. Start the web server
+    ```
+    node server.js
+    ```
+    * It should display the following message when the server has started successfully
+      ```
+      server listining on port 3003
+      ```
+1. Open the web page on a browser by entering the following URL into the address bar.
+    ```
+    http://localhost:3003/
+    ```
+
 ### Description
 
 1. `Main home page`
