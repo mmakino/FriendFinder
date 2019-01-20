@@ -2,9 +2,9 @@
 
 ### Overview
 
-This "FriendFinder" application is basically a dating app based on personality compatibility via survey. The app will take in users' answers from the surveys, then compare their answers with those from other users. Then, it will display the name and picture of the user with the best overall match.
+This "FriendFinder" application is basically a dating app based on personality compatibility via survey. The app will take in users' answers from the surveys, and it will compare their answers with those from other users. Then, it will display the name and picture of the user with the best overall match.
 
-This full stack web site uses Express(Node.js) to handle routing to serve various endpoints. It is deployed at Heroku.
+This full stack web site app Express(Node.js) to handle routing to serve various endpoints. It is deployed at Heroku.
 
 ### Deployment and Availability
 
@@ -15,7 +15,7 @@ This full stack web site uses Express(Node.js) to handle routing to serve variou
 
 ### Intallation
 
-* This full stack app can be installed __locally__ through the following steps 
+* This full stack app can also be installed __locally__ through the following steps 
 
 1. Copy / Clone the git repository
     ```
@@ -33,7 +33,7 @@ This full stack web site uses Express(Node.js) to handle routing to serve variou
       ```
       server listining on port 3003
       ```
-1. Open the web page on a browser by entering the following URL into the address bar.
+1. Open the web page in a browser by entering the following URL into the address bar.
     ```
     http://localhost:3003/
     ```
@@ -41,7 +41,7 @@ This full stack web site uses Express(Node.js) to handle routing to serve variou
 ### Description
 
 1. `Main home page`
-   1. A button to the survery page. 
+   1. A button to the survey page. 
    1. A hyper link to a list of friends in JSON format.
    1. A hyper link to this app in GitHub repository.
   
@@ -54,7 +54,7 @@ This full stack web site uses Express(Node.js) to handle routing to serve variou
     ![Demo Image Survey 2](app/public/images/demo-survey-bottom.png)
    * Please fill your name, provide a link to your picture, and answer __all the questions__  to see the best friend match result.
    * __The best match result__
-      * A friend with the most compatible answers to survery will be displayed.
+      * A friend with the most compatible answers to survey will be displayed.
       ![Demo Image Survey Result](app/public/images/demo-result.png)
       
     

@@ -4,16 +4,13 @@
 const fs = require('fs');
 let friends = require('../data/friends');
 
-const APIROutes = function() {
-
-}
 //
 // Routes to API endpoints
 //
 class APIRoutes {
   //
   // PARAM:
-  // * app = an express application instance
+  // * exprApp = an express application instance
   //
   constructor(exprApp) {
     this.app = exprApp;   // express app
@@ -31,12 +28,13 @@ class APIRoutes {
   //
   // API to handle incoming survey results.
   //
+  // { name: 'name',
+  //   photo: 'https://www.picutre.com/my.png',
+  //   scores: [ '3', '3', '2', '2', '2', '2', '2', '5', '5', '2' ] } 
+  //
   postFriends() {
     this.app.post('/api/friends', (req, res) => {
       console.log(req.body);
-      // { name: '',
-      // photo: '',
-      // scores: [ '3', '3', '2', '2', '2', '2', '2', '5', '5', '2' ] } 
       let scores = req.body.scores.map(n => parseInt(n));
       let matchIndex = this.findMatch(scores);
       let bestMatch = {
@@ -54,11 +52,17 @@ class APIRoutes {
   // Add a new person into the friends data
   //
   addPerson(personInfo) {
+    // convert the scores to integers
+    personInfo.scores = personInfo.scores.map(score => parseInt(score));
+    // add the new person to friends data in memory
     friends.push(personInfo);
+    
+    // Make the object ready for reloading
     let data = 'let friends = ' + JSON.stringify(friends, null, 2) + "\n"
                 + 'module.exports = friends;';
-    console.log(data);
+    // console.log(data);
     
+    // Write back into the file
     fs.writeFile(__dirname + '/../data/friends.js', data, (err) => {
       if (err) throw err;
       console.log('The file has been saved!');
@@ -68,9 +72,12 @@ class APIRoutes {
   //
   // Find match
   //
+  // RETURN:
+  // * an index of the match in the "friends" array data
+  //
   findMatch(scores) {
-    let match = null;
-    let minDiff = 100;
+    let match = null;   // index of the current best match 
+    let minDiff = 100;  // init the minimum difference
 
     for(let i = 0; i < friends.length; i++) {
       let totalDifference = 0;
@@ -79,6 +86,9 @@ class APIRoutes {
       }
       console.log(friends[i].scores, totalDifference, friends[i].name);
       
+      // IF the difference is smaller than the current least difference
+      // THEN 1)set the best match index to the current person
+      //      2)update the min diff with this diff
       if (totalDifference < minDiff) {
         match = i; 
         minDiff = totalDifference; 

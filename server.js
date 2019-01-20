@@ -9,6 +9,7 @@ const APIRoutes = require('./app/routing/apiRoutes');
 
 const PORT = process.env.PORT || 3003;
 
+// Initialize Express app and routes
 const app = express();
 const htmlRoutes = new HTMLRoutes(app);
 const apiRoutes = new APIRoutes(app);
@@ -27,6 +28,7 @@ htmlRoutes.survey(path.join(publicDir, 'survey.html'));
 apiRoutes.getFriends();
 apiRoutes.postFriends();
 
+// start the server
 app.listen(PORT, function() {
   console.log(`server listining on port ${PORT}`);
 });

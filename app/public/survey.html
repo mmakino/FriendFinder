@@ -20,6 +20,7 @@
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="javascript/survey.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,6 @@
 
     <h4>Link to Photo Image (Required)</h4>
     <input type="text" id="photo" class="form-control" required>
-
     <hr>
 
     <form>
@@ -210,61 +210,14 @@
     </div>
   </div>
 
-  <script type="text/javascript">
-    // catch the form inputs
+  <script>
+    // Catch a submit click event and process the inputs
     $("#submit").on("click", function (event) {
       event.preventDefault();
-      console.log('Submitting the form');
-
-      // Form validation
-      let questions = {};
-      function validateForm() {
-        
-        $("form input:radio").each(function () {
-          // console.log($(this).attr("name"), $(this).val(), $(this).prop('checked'));
-          if (!($(this).attr("name") in questions)) {
-            questions[$(this).attr("name")] = false;
-          }
-          if ($(this).prop("checked")) {
-            questions[$(this).attr("name")] = parseInt($(this).val());
-          }
-        });
-        console.log(questions);
-        
-        let isValid = Object.values(questions).every(v => v !== false);
-        isValid = $('#name').val() !== "";
-        isValid = $('#photo').val() !== "";
-        
-        return isValid;
-      }
-
-      // If all required fields are filled
-      if (validateForm()) {
-        // Create an object for the user"s data
-        let userData = {
-          name: $("#name").val(),
-          photo: $("#photo").val(),
-          scores: Object.values(questions) 
-        };
-
-        // AJAX post the data to the friends API.
-        $.post("/api/friends", userData, function (data) {
-
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          $("#match-name").text(data.name);
-          $("#match-img").attr("src", data.photo);
-
-          // Show the modal with the best match
-          $("#results-modal").modal("toggle");
-
-        });
-      } else {
-        let missing = Object.entries(questions).filter(v => v === false);
-        alert("Please fill out all fields before submitting!");
-      }
+      // console.log("submitting...");
+      procSurvey(); // in the suvey.js
     });
   </script>
-
 </body>
 
 </html>

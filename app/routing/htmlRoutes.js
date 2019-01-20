@@ -7,7 +7,7 @@
 class HTMLRoutes {
   //
   // PARAM:
-  // * app = an express application instance
+  // * exprApp = an express application instance
   //
   constructor(exprApp) {
     this.app = exprApp;   // express app
@@ -38,5 +38,5 @@ class HTMLRoutes {
   }
 }
 
-// Export the class
+// Export the class module
 module.exports = HTMLRoutes;
