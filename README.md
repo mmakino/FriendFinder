@@ -2,9 +2,9 @@
 
 ### Overview
 
-This "FriendFinder" application is basically a dating app based on personality compatibility via survey. The app will take in users' answers from the surveys, and it will compare their answers with those from other users. Then, it will display the name and picture of the user with the best overall match.
+This "FriendFinder" application is basically a dating app based on personality compatibility through survey. The app will take in users' answers from the surveys, and it will compare their answers with those from other users. Then, it will display the name and picture of the user with the best overall match.
 
-This full stack web site uses app Express(Node.js) to handle routing to serve various endpoints. It is deployed at Heroku.
+This full stack web site app makes use of Express(Node.js) to handle routing to serve various endpoints. It is deployed at Heroku.
 
 ### Deployment and Availability
 
