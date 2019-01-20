@@ -55,7 +55,7 @@ class APIRoutes {
   //
   addPerson(personInfo) {
     friends.push(personInfo);
-    let data = 'let friends = ' + JSON.stringify(friends) + "\n"
+    let data = 'let friends = ' + JSON.stringify(friends, null, 2) + "\n"
                 + 'module.exports = friends;';
     console.log(data);
     
@@ -71,15 +71,14 @@ class APIRoutes {
   findMatch(scores) {
     let match = null;
     let minDiff = 100;
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
     for(let i = 0; i < friends.length; i++) {
-      let diff = [];
+      let totalDifference = 0;
       for(let j = 0; j < 10; j++) {
-        diff.push(Math.abs(friends[i].scores[j] - scores[j]));
+        totalDifference += Math.abs(friends[i].scores[j] - scores[j]);
       }
-      let totalDifference = diff.reduce(reducer);
       console.log(friends[i].scores, totalDifference, friends[i].name);
+      
       if (totalDifference < minDiff) {
         match = i; 
         minDiff = totalDifference; 
