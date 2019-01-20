@@ -45,12 +45,18 @@ This full stack web site uses Express(Node.js) to handle routing to serve variou
    1. A hyper link to a list of friends in JSON format.
    1. A hyper link to this app in GitHub repository.
   
+      ![Demo Image home](app/public/images/demo-home.png)
+
 1. `Survey page`
    * Enter 1)your name and 2)a url link to your picutre. 
    * There are 10 questions. Please answer each question on a scale of 1 to 5 as to how much you agree or disagree to a question.
+    ![Demo Image Survey 1](app/public/images/demo-survey-top.png)
+    ![Demo Image Survey 2](app/public/images/demo-survey-bottom.png)
    * Please fill your name, provide a link to your picture, and answer __all the questions__  to see the best friend match result.
    * __The best match result__
       * A friend with the most compatible answers to survery will be displayed.
+      ![Demo Image Survey Result](app/public/images/demo-result.png)
+      
     
 ### Directories & Files
 ```
