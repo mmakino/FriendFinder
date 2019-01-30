@@ -11,7 +11,7 @@ This full stack web site app makes use of Express(Node.js) to handle routing to 
 * Heroku
   * Live app - https://intense-falls-18158.herokuapp.com
 * GitHub
-  * Repository - https://mmakino.github.io/FriendFinder
+  * Repository - https://github.com/mmakino/FriendFinder
 
 ### Intallation
 
@@ -42,8 +42,8 @@ This full stack web site app makes use of Express(Node.js) to handle routing to 
 
 1. `Main home page`
    1. A button to the survey page. 
-   1. A hyper link to a list of friends in JSON format.
-   1. A hyper link to this app in GitHub repository.
+   1. A hyperlink to a list of friends in JSON format.
+   1. A hyperlink to this app in GitHub repository.
   
       ![Demo Image home](app/public/images/demo-home.png)
 
